@@ -6,10 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="vendors/angular.min.js"></script>
   <script src="scripts/client.js"></script>
+  <script src="scripts/controllers/input.controller.js"></script>
+  <script src="scripts/services/message.service.js"></script>
   <title>Document</title>
 </head>
 <body ng-app="app">
   <h1>Hello world</h1>
-  {{2+2}}
+  <div ng-controller="InputController as ic">
+    <form ng-submit="ic.newMessage(ic.result.input)">
+      <input type="text" ng-model="ic.result.input.author" placeholder="Name" />
+      <input type="text" ng-model="ic.result.input.message" placeholder="Message" />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </body>
 </html>
