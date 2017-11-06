@@ -1,0 +1,24 @@
+.messageDiv {
+  background-color: #BFAFA6;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 2px;
+}
+
+body {
+  background-color: #6E6A6F;
+}
+
+h1,h6 {
+  color: #D4D2D5;
+  font-family: 'Pacifico', cursive;
+}
+
+.author {
+  float: right;
+  font-family: 'Pacifico', cursive;
+}
+
+.equalHeight .equalHeight-child:nth-child(4n+1) {
+  clear: left;
+}

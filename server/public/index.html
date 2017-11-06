@@ -9,23 +9,29 @@
   <script src="scripts/controllers/input.controller.js"></script>
   <script src="scripts/controllers/message.controller.js"></script>
   <script src="scripts/services/message.service.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="styles/style.css">
   <title>Message Board</title>
 </head>
 <body ng-app="app">
-  <h1>MessageWorld</h1>
-  <h6>THE place to post your messages</h6>
-  <div ng-controller="InputController as ic">
-    <form ng-submit="ic.newMessage(ic.result.input)">
-      <input type="text" ng-model="ic.result.input.author" placeholder="Name" />
-      <input type="text" ng-model="ic.result.input.message" placeholder="Message" />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-  <div ng-controller="MessageController as mc">
-    <div ng-repeat="message in mc.result.data">
-      <p>{{message.message}}<br>
-        -{{message.author}}
-      </p>
+  <div class="container">
+    <h1>MessageWorld</h1>
+    <div ng-controller="InputController as ic">
+      <form ng-submit="ic.newMessage(ic.result.input)">
+        <input type="text" ng-model="ic.result.input.author" placeholder="Name" />
+        <input type="text" ng-model="ic.result.input.message" placeholder="Message" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="equalHeight" ng-controller="MessageController as mc">
+      <div class="col-sm-3 equalHeight-child" ng-repeat="message in mc.result.data">
+        <div class="messageDiv">
+          <p>{{message.message}}<br>
+            <span class="author">-{{message.author}}</span>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
