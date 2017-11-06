@@ -14,9 +14,22 @@ app.service('MessageService',function($http){
     $http.post('/message',input)
     .then(function(response){
       console.log('new message posted');
+      self.getMessages();
     })
     .catch(function(error){
       console.log('failed to post new message');
     });
   };
+
+  self.getMessages = function(){
+    $http.get('/message')
+    .then(function(response){
+      self.result.data = response.data;
+    })
+    .catch(function(err){
+      console.log('error in GET request',err);
+    });
+  };
+
+  self.getMessages();
 });

@@ -8,4 +8,6 @@ app.controller('InputController', function(MessageService){
   vm.newMessage = function(inputObject){
     ms.newMessage(inputObject);
   };
+  
+
 });
